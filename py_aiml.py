@@ -67,6 +67,7 @@ if __name__ == "__main__":
 	    	input_text = input_text + " " + user_sentiment
 	    	input_text = input_text.replace(".", " ")
 	    	
+	    	
 	    response = k.respond(str(input_text))
 	    print(response)
 	    if sentiment_operation_check(response)==1:
