@@ -1,0 +1,365 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="1.0.1" encoding="UTF-8">
+
+
+<topic name="INITIATECONVERSATION">
+
+        <!--get user name-->
+        <category>
+            <pattern>MY NAME IS *</pattern>
+            <template>
+                <think><set name="client-name"><star/></set></think>
+                <srai>DIALOG 2</srai>
+            </template>
+        </category>
+
+        <category>
+            <pattern>* MY NAME IS *</pattern>
+            <template>
+                <think><set name="client-name"><star index="2"/></set></think>
+                <srai>DIALOG 2</srai>
+            </template>
+        </category>
+
+        <category>
+            <pattern>HI I AM *</pattern>
+            <template>
+                <think><set name="client-name"><star/></set></think>
+                <srai>DIALOG 2</srai>
+            </template>
+        </category>
+
+        <category>
+            <pattern>HI * I AM *</pattern>
+            <template>
+                <think><set name="client-name"><star index="2"/></set></think>
+                <srai>DIALOG 2</srai>
+            </template>
+        </category>
+
+        <category>
+            <pattern>HELLO I AM *</pattern>
+            <template>
+                <think><set name="client-name"><star/></set></think>
+                <srai>DIALOG 2</srai>
+            </template>
+        </category>
+
+        <category>
+            <pattern>HELLO * I AM *</pattern>
+            <template>
+                <think><set name="client-name"><star index="2"/></set></think>
+                <srai>DIALOG 2</srai>
+            </template>
+        </category>
+
+        <category>
+            <pattern>HELLO MY NAME IS *</pattern>
+            <template>
+                <think><set name="client-name"><star/></set></think>
+                <srai>DIALOG 2</srai>
+            </template>
+        </category>
+
+        <category>
+            <pattern>HELLO * MY NAME IS *</pattern>
+            <template>
+                <think><set name="client-name"><star index="2"/></set></think>
+                <srai>DIALOG 2</srai>
+            </template>
+        </category>
+
+        <category>
+            <pattern>I AM *</pattern>
+            <template>
+                <think><set name="client-name"><star/></set></think>
+                <srai>DIALOG 2</srai>
+            </template>
+        </category>
+
+        <category>
+            <pattern>* I AM *</pattern>
+            <template>
+                <think><set name="client-name"><star index="2"/></set></think>
+                <srai>DIALOG 2</srai>
+            </template>
+        </category>
+
+        <category>
+            <pattern>MYSELF *</pattern>
+            <template>
+                <think><set name="client-name"><star/></set></think>
+                <srai>DIALOG 2</srai>
+            </template>
+        </category>
+
+        <category>
+            <pattern>* MYSELF *</pattern>
+            <template>
+                <think><set name="client-name"><star index="2"/></set></think>
+                <srai>DIALOG 2</srai>
+            </template>
+        </category>
+
+        <category>
+            <pattern>*</pattern>
+            <template>
+                <think><set name="client-name"><star/></set></think>
+                <srai>DIALOG 2</srai>
+            </template>
+        </category>
+        <!--End user name-->
+
+		<category>
+			<pattern>DIALOG 2</pattern>
+			<template>
+				Good to meet you <get name="client-name"/>. How are you?
+                <think><set name="topic">ASKMOOD</set></think>
+			</template>
+		</category>
+</topic>
+
+
+<topic name="ASKMOOD">
+        <!-- Response answer start-->
+        <category>
+            <pattern> * YXX </pattern>
+            <that> GOOD TO MEET YOU * </that>
+            <template>
+                That's wonderful. So tell me, do you want to learn a new language today?
+                <think><set name="topic">POSITIVEMOOD</set></think>
+            </template>
+        </category>
+
+        <category>
+            <pattern> * XYY </pattern>
+            <that> GOOD TO MEET YOU * </that>
+            <template>
+                That's nice. So tell me, do you want to learn a new language today?
+                <think><set name="topic">POSITIVEMOOD</set></think>
+            </template>
+        </category>
+
+        <category>
+            <pattern> * XYX </pattern>
+            <that> GOOD TO MEET YOU * </that>
+            <template>
+                Alright. Let me make your day more interesting, how about learning a new language today?
+                <think><set name="topic">POSITIVEMOOD</set></think>
+            </template>
+        </category>
+
+        <category>
+            <pattern> * XXY </pattern>
+            <that> GOOD TO MEET YOU * </that>
+            <template>
+                Its Okay <get name="client-name"/>. Do you want to talk with me for a while? Or do you want to learn a new language today?
+                <think><set name="topic">NEGATIVEMOOD</set></think>
+            </template>
+        </category>
+
+        <category>
+            <pattern> * XXX </pattern>
+            <that> GOOD TO MEET YOU * </that>
+            <template>
+                Hey! Don't be sad <get name="client-name"/>. You can talk to me if you want. Or may be we can learn a new language today.
+                <think><set name="topic">NEGATIVEMOOD</set></think>
+            </template>
+        </category>
+        <!-- Response answer end-->
+</topic>
+
+<topic name="POSITIVEMOOD">
+
+    <category>
+            <pattern>YES</pattern>
+            <template>
+                <think><set name="topic">LEARNLANGUAGE</set></think>
+            </template>
+    </category>
+
+    <category>
+            <pattern>YES *</pattern>
+            <template>
+                <think><set name="topic">LEARNLANGUAGE</set></think>
+            </template>
+    </category>
+
+    <category>
+            <pattern>* YES *</pattern>
+            <template>
+                <think><set name="topic">LEARNLANGUAGE</set></think>
+            </template>
+    </category>
+
+    <category>
+            <pattern>YEAH</pattern>
+            <template>
+                <think><set name="topic">LEARNLANGUAGE</set></think>
+            </template>
+    </category>
+
+    <category>
+            <pattern>YEAH *</pattern>
+            <template>
+                <think><set name="topic">LEARNLANGUAGE</set></think>
+            </template>
+    </category>
+
+    <category>
+            <pattern>* YEAH *</pattern>
+            <template>
+                <think><set name="topic">LEARNLANGUAGE</set></think>
+            </template>
+    </category>
+
+    <category>
+            <pattern>* YXX</pattern>
+            <template>
+                <think><set name="topic">LEARNLANGUAGE</set></think>
+            </template>
+    </category>
+
+    <category>
+            <pattern>* XYY</pattern>
+            <template>
+                <think><set name="topic">LEARNLANGUAGE</set></think>
+            </template>
+    </category>
+
+    <category>
+            <pattern>NO</pattern>
+            <template>
+                <think><set name="topic">CONTINUECONVERSATION</set></think>
+                <srai>GENERICCONVERSATIONSTART</srai>
+            </template>
+    </category>
+
+    <category>
+            <pattern>NO *</pattern>
+            <template>
+                <think><set name="topic">CONTINUECONVERSATION</set></think>
+                <srai>GENERICCONVERSATIONSTART</srai>
+            </template>
+    </category>
+
+    <category>
+            <pattern>* NO *</pattern>
+            <template>
+                <think><set name="topic">CONTINUECONVERSATION</set></think>
+                <srai>GENERICCONVERSATIONSTART</srai>
+            </template>
+    </category>
+
+    <category>
+            <pattern>* XXX</pattern>
+            <template>
+                <think><set name="topic">CONTINUECONVERSATION</set></think>
+                <srai>GENERICCONVERSATIONSTART</srai>
+            </template>
+    </category>
+
+    <category>
+            <pattern>* XXY</pattern>
+            <template>
+                <think><set name="topic">CONTINUECONVERSATION</set></think>
+                <srai>GENERICCONVERSATIONSTART</srai>
+            </template>
+    </category>
+
+    <category>
+            <pattern>* XYX</pattern>
+            <template>
+                <think><set name="topic">CONTINUECONVERSATION</set></think>
+                <srai>GENERICCONVERSATIONSTART</srai>
+            </template>
+    </category>
+
+</topic>
+
+<topic name="NEGATIVEMOOD">
+
+    <category>
+            <pattern>LEARN</pattern>
+            <template>
+                 <think><set name="topic">LEARNLANGUAGE</set></think>
+            </template>
+    </category>
+
+    <category>
+            <pattern>* LEARN</pattern>
+            <template>
+                 <think><set name="topic">LEARNLANGUAGE</set></think>
+            </template>
+    </category>
+
+    <category>
+            <pattern>LEARN *</pattern>
+            <template>
+                 <think><set name="topic">LEARNLANGUAGE</set></think>
+            </template>
+    </category>
+
+    <category>
+            <pattern>* LEARN *</pattern>
+            <template>
+                 <think><set name="topic">LEARNLANGUAGE</set></think>
+            </template>
+    </category>
+
+    <category>
+            <pattern>*</pattern>
+            <template>
+                <think><set name="topic">CONTINUECONVERSATION</set></think>
+                <srai>GENERICCONVERSATIONSTART</srai>
+            </template>
+    </category>
+
+</topic>
+
+<topic name="LEARNLANGUAGE">
+
+    <category>
+            <pattern>*</pattern>
+            <template>
+                LEARN LANGUAGE
+            </template>
+    </category>
+
+</topic>
+
+<topic name="CONTINUECONVERSATION">
+
+    <category>
+            <pattern>GENERICCONVERSATIONSTART</pattern>
+            <template>
+                <think><set name="topic">DEFAULT</set></think>
+                Okay, Let's talk
+            </template>
+    </category>
+
+    <category>
+            <pattern>*</pattern>
+            <template>
+                CONTINUE CONVERSATION
+            </template>
+    </category>
+
+</topic>
+ 
+ <category>
+    <pattern>TODAY IS *</pattern>
+    <template>
+    <think><set name="today"><star/></set></think>
+    <condition name="today">
+        <li value="MONDAY">Monday</li>
+        <li value="Monday">Monday</li>
+        <li value="monday">Monday</li>
+    </condition>
+    </template>
+ </category>
+
+
+
+</aiml>
+

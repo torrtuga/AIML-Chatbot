@@ -1,0 +1,16 @@
+<aiml version="1.0.1" encoding="UTF-8">
+    <!-- std-startup.xml -->
+    <category>
+        <pattern>LOAD AIML B</pattern>
+        <!-- This learn an aiml file -->
+        <template>
+            <learn>bot.aiml</learn>
+            <learn>greetings.aiml</learn>
+            <learn>initiate.aiml</learn>
+            <learn>client-personality.aiml</learn>
+            <learn>bot-personality.aiml</learn>
+            <srai>SET BOT PERSONALITY</srai>
+        </template> 
+    </category>
+
+</aiml>

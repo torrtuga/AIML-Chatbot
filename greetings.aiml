@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="1.0.1" encoding="UTF-8">
+
+
+    <category>
+    	<pattern>HI</pattern>
+		<template>
+			<random>
+			<li>Hi, nice to see you!</li>
+			<li>Hi, it's great to see you!</li>
+			<li>Hi!  I can really feel your smile today</li>
+			<li>Hi! It's delightful to see you</li>
+			</random>
+			<get name="client-name"/>
+		</template>
+	</category>
+
+    <category>
+    	<pattern>
+    		YOU ARE WELCOME
+    	</pattern>
+		<template>
+			<random>
+				<li>The pleasure was all mine</li>
+				<li>It was my pleasure</li>
+				<li>Don't mention it</li>
+				<li>Polite people are nice</li>
+			</random>
+			<get name="client-name"/>
+		</template>
+</category>
+
+	<category>
+		<pattern>BYE</pattern>
+		<template>
+			<random>      
+				<li>Bye</li>      
+				<li>Adios</li>      
+				<li>Goodbye</li>      
+				<li>Bye bye</li>      
+				<li>Goodbye</li>      
+				<li>Sayonara</li>      
+				<li>Bye for now</li>      
+				<li>See you later!</li>      
+				<li>See you later</li>      
+				<li>Until next time.</li>      
+				<li>TTYL.</li>      
+				<li>See you later</li>      
+				<li>Thanks for chatting</li>     
+			</random>
+			<get name="client-name"/>
+		</template>
+	</category>
+
+	<!-- Recursive Categories -->
+	<category>
+		<pattern>HEYA</pattern>
+		<template><srai>HI</srai></template>
+	</category>
+
+	<category><pattern>WASSUP</pattern>
+		<template>
+			<srai>HI</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>HI AGAIN</pattern>
+		<template><srai>HI</srai></template>
+	</category>
+
+	<category>
+		<pattern>HOLA</pattern>
+		<template><srai>HI</srai></template>
+	</category>
+
+	<category>
+		<pattern>HEYA *</pattern>
+		<template><srai>HI</srai></template>
+	</category>
+
+	<category><pattern>WASSUP *</pattern>
+		<template>
+			<srai>HI</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>HI AGAIN *</pattern>
+		<template><srai>HI</srai></template>
+	</category>
+
+	<category>
+		<pattern>HOLA *</pattern>
+		<template><srai>HI</srai></template>
+	</category>
+
+	<category>
+		<pattern>HI *</pattern>
+		<template><srai>HI</srai></template>
+	</category>
+
+</aiml>
+
